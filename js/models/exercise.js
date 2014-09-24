@@ -6,10 +6,11 @@ var Exercise = Backbone.Model.extend({
 
 	defaults: {
 		name: '',
-		sets: '',
-		reps: '',
-		work: ''
-	}
+		sets: 0,
+		reps: 0,
+		weight: 0,
+		work: 0
+	},
 
 	url: '#'
 

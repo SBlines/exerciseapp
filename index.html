@@ -9,6 +9,47 @@
 			<h1>Exercise App</h1>
 		</header>
 
+		<div id="exercise-input">
+			<input id="new-ex" placeholder="Exercise Name">
+			<button id="create-ex" type="button">Work!</button>
+		</div>
+
+		<br>
+		<br>
+		<br>
+
+		<table class="exercise-table">
+				<thead>
+					<tr>
+						<th>Number</th>
+						<th>Name</th>
+						<th>Sets</th>
+						<th>Reps</th>
+						<th>Weight</th>
+						<th>Work</th>
+						<th>Remove</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+
+			</table>
+
+
+
+
+
+
+		<script type="text/template" id="exerciseViewTemplate">
+			<td><%= exercise.get('id') || "ID" %></td>
+			<td><%= exercise.get('name') %></td>
+			<td><%= exercise.get('sets') %></td>
+			<td><%= exercise.get('reps') %></td>
+			<td><%= exercise.get('weight') %></td>
+			<td><%= exercise.get('work') %></td>
+			<td><button class="delBut" data-id='<%= exercise.cid %>'  type="button">X</button></td>
+	</script>
+
 
 
 
@@ -19,5 +60,9 @@
 		<script src="js/lib/backbone-min.js"></script>
 		<script src="js/lib/backbone.localStorage.js"></script>
 		<script src="js/models/exercise.js"></script>
+		<script src="js/collections/exercises.js"></script>
+		<script src="js/views/exercise_view.js"></script>
+		<script src="js/views/exercises.js"></script>
+
 	</body>
 </html>
