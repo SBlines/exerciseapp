@@ -1,8 +1,8 @@
 var ExercisesView = Backbone.View.extend({
-	el: '#exercise-input',
+	el: '#ex-input',
 
 	
-template: _.template($('#exercise-input').html()),
+template: _.template($('#exerciseListTemplate').html()),
 
   initialize: function() {
     console.log('View initialized');
@@ -30,12 +30,12 @@ template: _.template($('#exercise-input').html()),
     },
 
   events: {
-    'click #create-ex': 'placeOrder',
+    'click #create-ex': 'addToList',
   },
     
 
-  placeOrder: function(){
-    console.log("Attempting to placeOrder");
+  addToList: function(){
+    console.log("Adding to list..");
     if(this.verify()){
       var nameInput = document.getElementById("new-ex").value;
       //var nameInput = $('#new-ex').val();

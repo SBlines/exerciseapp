@@ -8,49 +8,41 @@
 		<header>
 			<h1>Exercise App</h1>
 		</header>
+		<div id="ex-input"></div>
+	<div id="main"></div>
 
-		<div id="exercise-input">
-			<input id="new-ex" placeholder="Exercise Name">
-			<button id="create-ex" type="button">Work!</button>
-		</div>
-
-		<br>
-		<br>
-		<br>
-
-		<table class="exercise-table">
-				<thead>
-					<tr>
-						<th>Number</th>
-						<th>Name</th>
-						<th>Sets</th>
-						<th>Reps</th>
-						<th>Weight</th>
-						<th>Work</th>
-						<th>Remove</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-
-			</table>
-
-
-
-
-
-
-		<script type="text/template" id="exerciseViewTemplate">
+	<script type="text/template" id="exerciseViewTemplate">
 			<td><%= exercise.get('id') || "ID" %></td>
 			<td><%= exercise.get('name') %></td>
-			<td><%= exercise.get('sets') %></td>
-			<td><%= exercise.get('reps') %></td>
-			<td><%= exercise.get('weight') %></td>
-			<td><%= exercise.get('work') %></td>
-			<td><button class="delBut" data-id='<%= exercise.cid %>'  type="button">X</button></td>
+			<td class="sets"><%= exercise.get('sets') %></td>
+			<td class="reps"><%= exercise.get('reps') %></td>
+			<td class="weight"><%= exercise.get('weight') %></td>
+			<td><%= parseInt(exercise.get('sets'))*parseInt(exercise.get('reps'))*parseInt(exercise.get('weight')) %></td>
+			<td><button class="delBut" data-id='<%= exercise.cid %>' type="button">X</button></td>
 	</script>
 
+	<script type="text/template" id="exerciseListTemplate">
+		<input id="new-ex" placeholder="Exercise Name">
+		<p>text</p>
 
+		<button id="create-ex" type="button">Work!</button><br><br>
+		<table class="exercise-table">
+			<thead>
+				<tr>
+					<th>Number</th>
+					<th>Name</th>
+					<th>Sets</th>
+					<th>Reps</th>
+					<th>Weight</th>
+					<th>Total Work</th>
+					<th>Remove</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+	</script>
 
 
 

@@ -5,10 +5,10 @@ var ExerciseView = Backbone.View.extend({
 	template: _.template($('#exerciseViewTemplate').html()),
 
   events: {
-    //'click #order': 'placeOrder',
-    'click .delBut': 'deleteOrder',
-    'click .cookBox': 'togCook',
-    'click .deliverBox': 'togDeliver'
+    'click .sets': 'setsUp',
+    'click .reps': 'repsUp',
+    'click .weight': 'weightUp',
+    'click .delBut': 'deleteOrder'
   },
   
   deleteOrder: function(event) {
@@ -19,6 +19,27 @@ var ExerciseView = Backbone.View.extend({
   render: function() {
     this.$el.html( this.template({exercise: this.model}) );
     return this;
+  },
+
+  setsUp: function(){
+    var newVal = {sets: ''};
+    newVal.sets = parseInt(this.model.get('sets'));
+    newVal.sets++;
+    this.model.set(newVal);
+  },
+
+  repsUp: function(){
+    var newVal = {reps: ''};
+    newVal.reps = parseInt(this.model.get('reps'));
+    newVal.reps++;
+    this.model.set(newVal);
+  },
+
+  weightUp: function(){
+    var newVal = {weight: ''};
+    newVal.weight = parseInt(this.model.get('weight'));
+    newVal.weight++;
+    this.model.set(newVal);
   },
 
   togCook: function(){

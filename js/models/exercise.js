@@ -8,7 +8,7 @@ var Exercise = Backbone.Model.extend({
 		name: '',
 		sets: 0,
 		reps: 0,
-		weight: 0,
+		weight: 20,
 		work: 0
 	},
 
