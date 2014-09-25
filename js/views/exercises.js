@@ -38,16 +38,14 @@ template: _.template($('#exerciseListTemplate').html()),
     console.log("Adding to list..");
     if(this.verify()){
       var nameInput = document.getElementById("new-ex").value;
-      //var nameInput = $('#new-ex').val();
+      var weightInput = parseInt(document.getElementById("new-weight").value) || 0;
 
-
-      //if(!toppingInput.length){toppingInput.push("Cheese");}
-
-      this.collection.create({name: nameInput});
+      this.collection.create({name: nameInput, weight: weightInput});
       document.getElementById("new-ex").value = '';
+      document.getElementById("new-weight").value = '';
     }
     else { 
-      alert('You must enter a name!');
+      alert('Please give your exercise a name.');
     }
   },
 

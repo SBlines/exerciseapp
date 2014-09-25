@@ -6,9 +6,9 @@ var Exercise = Backbone.Model.extend({
 
 	defaults: {
 		name: '',
-		sets: 0,
-		reps: 0,
-		weight: 20,
+		sets: 1,
+		reps: 1,
+		weight: 0,
 		work: 0
 	},
 
