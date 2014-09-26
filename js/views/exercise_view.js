@@ -19,20 +19,22 @@ var ExerciseView = Backbone.View.extend({
 
   clickName: function(){
     var name = this.model.get('name');
+    //YouTube API
     search(name);
   },
-  
-  remove: function(event) {
-    this.model.destroy();
-  },
 
-  addOne: function() {
+   addOne: function(){
     var modelKey = arguments[0].currentTarget.className.toString();
     var modelVal = parseInt(this.model.get(modelKey));
     modelVal++;
     this.model.set(modelKey, modelVal);
+  },
+  
+  remove: function(event){
+    this.model.destroy();
+  }
 
-}
+
 
   // These have been DRYed
   // setsUp: function(){

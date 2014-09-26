@@ -13,7 +13,7 @@
 		<div id="ytresult"></div>
 
 		<script type="text/template" id="exerciseViewTemplate">
-			<td><%= exercise.get('id') || "ID" %></td>
+			<td><%= exercise.get('cid') || "ID" %></td>
 			<td class="name"><%= exercise.get('name') %></td>
 			<td class="sets"><%= exercise.get('sets') %></td>
 			<td class="reps"><%= exercise.get('reps') %></td>
@@ -40,7 +40,7 @@
 						<th>Sets</th>
 						<th>Reps</th>
 						<th>Weight</th>
-						<th>Total Work</th>
+						<th>Work</th>
 						<th>Remove</th>
 					</tr>
 				</thead>
@@ -61,10 +61,10 @@
 		<script src="js/collections/exercises.js"></script>
 		<script src="js/views/exercise_view.js"></script>
 		<script src="js/views/exercises.js"></script>
-		 <!-- <script src="js/auth.js"></script>
-		// <script src="js/search.js"></script>
-		// <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-		// <script src="js/youtubeapi.js"></script> -->
+		<script src="js/auth.js"></script>
+		<script src="js/search.js"></script>
+		<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+		<!-- <script src="js/youtubeapi.js"></script> -->
 
 	</body>
 </html>

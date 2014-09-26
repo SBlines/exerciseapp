@@ -13,11 +13,6 @@ template: _.template($('#exerciseListTemplate').html()),
   },
 
   render: function(){
-    console.log('Attempting render');
-    //cancel render if no new updates?
-    // if (this.model.changed.id !== undefined) {
-    //   return;
-    // }
     this.$el.html( this.template({collection: this.collection}) );
     var self = this;
     this.collection.forEach(function(exercise) {
@@ -40,7 +35,12 @@ template: _.template($('#exerciseListTemplate').html()),
       var nameInput = document.getElementById("new-ex").value;
       var weightInput = parseInt(document.getElementById("new-weight").value) || 0;
 
-      this.collection.create({name: nameInput, weight: weightInput});
+      //this.collection.create({name: nameInput, weight: weightInput});
+      //try to save:
+
+      var ex = new Exercise({name: nameInput, weight: weightInput});
+      ex.save();
+      this.collection.add(ex);
       document.getElementById("new-ex").value = '';
       document.getElementById("new-weight").value = '';
     }
